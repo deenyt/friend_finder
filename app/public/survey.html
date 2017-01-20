@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Friend Finder Survey</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<!-- Latest compiled and minified js(jquery) -->
+		<script   src="https://code.jquery.com/jquery-3.0.0.min.js"   integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="   crossorigin="anonymous"></script>
+
+<!-- The Modal pop-up styling  for results ****** -->
+<style>
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #3366ff;
+    color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #3366ff;
+    color: white;
+}
+</style>
+
+ <!--  End of Modal Pop up styling ************************--> 
+	
+</head>
+<body>
+	<div class="container">
+		<h1>Survey Questions</h1>
+		<hr>
+
+		<h3><bold>About You</bold></h3>
+		<h4>Name(Required)</h4>
+		<input type="text"  id="name"  required >
+		<br>
+		<br>
+		<h4>Link to a profile Image(Required)</h4>
+		<input type="text"  id="image-link" required >
+
+		<hr> 
+		<!-- questions -->
+		<h3><bold>Question 1</bold></h3>
+		<h5>You think cats are great</h5>
+		<select id="q1">
+			<option value="1">1 (Strongly Disagree)</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5 (Strongly Agree)</option>
+		</select>
+
+		<h3><bold>Question 2</bold></h3>
+		<h5>You think hiking is great</h5>
+		<select id="q2">
+			<option value="1">1 (Strongly Disagree)</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5 (Strongly Agree)</option>
+		</select>
+
+		<h3><bold>Question 3</bold></h3>
+		<h5>You think children are great</h5>
+		<select id="q3">
+			<option value="1">1 (Strongly Disagree)</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5 (Strongly Agree)</option>
+		</select>
+
+		<h3><bold>Question 4</bold></h3>
+		<h5>You think pizza is great</h5>
+		<select id="q4">
+			<option value="1">1 (Strongly Disagree)</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5 (Strongly Agree)</option>
+		</select>
+
+		<h3><bold>Question 5</bold></h3>
+		<h5>You think vegetables are great</h5>
+		<select id="q5">
+			<option value="1">1 (Strongly Disagree)</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5 (Strongly Agree)</option>
+		</select>
+
+		<h3><bold>Question 6</bold></h3>
+		<h5>You think The Weekend is great</h5>
+		<select id="q6">
+			<option value="1">1 (Strongly Disagree)</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5 (Strongly Agree)</option>
+		</select>
+
+		<h3><bold>Question 7</bold></h3>
+		<h5>You think playing sports is great</h5>
+		<select id="q7">
+			<option value="1">1 (Strongly Disagree)</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5 (Strongly Agree)</option>
+		</select>
+
+		<h3><bold>Question 8</bold></h3>
+		<h5>You think naps are great</h5>
+		<select id="q8">
+			<option value="1">1 (Strongly Disagree)</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5 (Strongly Agree)</option>
+		</select>
+
+		<h3><bold>Question 9</bold></h3>
+		<h5>You think laughing is great</h5>
+		<select id="q9">
+			<option value="1">1 (Strongly Disagree)</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5 (Strongly Agree)</option>
+		</select>
+
+		<h3><bold>Question 10</bold></h3>
+		<h5>You think the ocean is great</h5>
+		<select id="q10">
+			<option value="1">1 (Strongly Disagree)</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5 (Strongly Agree)</option>
+		</select>
+		<hr>
+		<button type="button" class="btn btn-lg btn-primary" id="submit-survey">Submit survey</button>
+		<hr>
+
+	<footer class="footer">
+		<div class="container">
+			<p><a href="api/friends">Friends List API</a> | <a href="https://github.com/deenyt/friend_finder">GitHub Repo</a></p>
+		</div>
+	</footer>
+
+	</div>
+
+<!--   For the Modal Pop up box with result  ************* -->
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Here is your Friend Match</h2>
+    </div>
+    <div class="modal-body">
+      <p id="friend-name"></p>
+      <div id="friend-image"> </div>
+ 
+    </div>
+    <div class="modal-footer">
+      <h3>Good Luck!</h3>
+    </div>
+  </div>
+
+</div>
+
+<!--     ************************    -->
+
+<script type="text/javascript" src="survey.js"></script>
+</body>
+</html>
+
+
+
+
+
+
